@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.NEXTAUTH_SECRET || "servipro-secret";
+const JWT_SECRET = process.env.NEXTAUTH_SECRET || "servicfy-secret";
 
 // POST - Login do tecnico
 export async function POST(req: NextRequest) {

@@ -10,8 +10,8 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const FROM_EMAIL = process.env.SMTP_FROM || "noreply@servipro.com.br";
-const APP_NAME = "ServiPro";
+const FROM_EMAIL = process.env.SMTP_FROM || "noreply@servicfy.com.br";
+const APP_NAME = "Servicfy";
 
 function baseTemplate(content: string): string {
   return `
@@ -70,7 +70,7 @@ export async function sendTrialEndingEmail(to: string, nome: string, diasRestant
       escolha um plano e continue usando todas as funcionalidades.
     </p>
     <div style="text-align:center;margin:24px 0;">
-      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servipro.com.br"}/dashboard/configuracoes"
+      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servicfy.com.br"}/dashboard/configuracoes"
          style="display:inline-block;background:linear-gradient(135deg,#10b981,#059669);color:#fff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:bold;font-size:16px;">
         Escolher meu Plano
       </a>
@@ -104,7 +104,7 @@ export async function sendServiceExpiringEmail(
       Acesse o sistema para reagendar ou gerar uma nova ordem de servico.
     </p>
     <div style="text-align:center;">
-      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servipro.com.br"}/dashboard/agenda"
+      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servicfy.com.br"}/dashboard/agenda"
          style="display:inline-block;background:linear-gradient(135deg,#10b981,#059669);color:#fff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:bold;">
         Ver Agenda
       </a>
@@ -132,7 +132,7 @@ export async function sendPaymentOverdueEmail(
       <p style="margin:0;"><strong style="color:#94a3b8;">Vencimento:</strong> <span style="color:#ef4444;">${dataVencimento}</span></p>
     </div>
     <div style="text-align:center;margin:24px 0;">
-      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servipro.com.br"}/dashboard/financeiro"
+      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servicfy.com.br"}/dashboard/financeiro"
          style="display:inline-block;background:linear-gradient(135deg,#10b981,#059669);color:#fff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:bold;">
         Ver Financeiro
       </a>
@@ -157,7 +157,7 @@ export async function sendWelcomeEmail(to: string, nome: string) {
       <li>Ative os lembretes automaticos por WhatsApp</li>
     </ul>
     <div style="text-align:center;margin:24px 0;">
-      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servipro.com.br"}/dashboard/onboarding"
+      <a href="${process.env.NEXT_PUBLIC_BASE_URL || "https://servicfy.com.br"}/dashboard/onboarding"
          style="display:inline-block;background:linear-gradient(135deg,#10b981,#059669);color:#fff;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:bold;font-size:16px;">
         Completar Cadastro
       </a>

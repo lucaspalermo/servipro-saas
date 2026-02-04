@@ -60,7 +60,7 @@ export default function LoginPage() {
             <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-shadow">
               <CheckCircle className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold text-white">ServiPro</span>
+            <span className="text-2xl font-bold text-white">Servicfy</span>
           </Link>
         </div>
 
@@ -164,7 +164,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="text-center mt-8">
           <p className="text-dark-600 text-xs">
-            &copy; {new Date().getFullYear()} ServiPro. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Servicfy. Todos os direitos reservados.
           </p>
         </div>
       </div>

@@ -68,7 +68,7 @@ export default function BlogPage() {
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">ServiPro</span>
+              <span className="text-xl font-bold text-white">Servicfy</span>
             </Link>
             <div className="flex items-center gap-6">
               <Link href="/" className="text-dark-400 hover:text-white transition-colors text-sm">Home</Link>
@@ -142,7 +142,7 @@ export default function BlogPage() {
           <h2 className="text-2xl font-bold text-white mb-4">
             Pronto para profissionalizar sua gestao?
           </h2>
-          <p className="text-dark-400 mb-8">Teste o ServiPro gratis por 14 dias.</p>
+          <p className="text-dark-400 mb-8">Teste o Servicfy gratis por 14 dias.</p>
           <Link href="/registro" className="btn-primary text-base !px-8 !py-4">
             Comecar Gratis <ArrowRight className="w-5 h-5" />
           </Link>
@@ -152,7 +152,7 @@ export default function BlogPage() {
       {/* Footer */}
       <footer className="border-t border-dark-800 py-8">
         <div className="max-w-4xl mx-auto px-4 text-center text-dark-500 text-sm">
-          &copy; {new Date().getFullYear()} ServiPro. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} Servicfy. Todos os direitos reservados.
         </div>
       </footer>
     </div>

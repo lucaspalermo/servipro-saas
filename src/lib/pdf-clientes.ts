@@ -48,7 +48,7 @@ export function generateClientesPdf(data: ClienteReportData): void {
   doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(...COLORS.textDark);
-  doc.text(data.tenantNome || "ServiPro", margin + 36, y + 6);
+  doc.text(data.tenantNome || "Servicfy", margin + 36, y + 6);
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...COLORS.textMedium);
@@ -143,7 +143,7 @@ export function generateClientesPdf(data: ClienteReportData): void {
   doc.setFontSize(7);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...COLORS.textLight);
-  doc.text("Documento gerado pelo ServiPro - www.servipro.com.br", margin, footerY);
+  doc.text("Documento gerado pelo Servicfy - www.servicfy.com.br", margin, footerY);
   doc.text(
     `Gerado em: ${new Date().toLocaleString("pt-BR")}`,
     pageWidth - margin,

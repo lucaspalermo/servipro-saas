@@ -1,6 +1,6 @@
 {
-  "name": "ServiPro - Gestao de Servicos",
-  "short_name": "ServiPro",
+  "name": "Servicfy - Gestao de Servicos",
+  "short_name": "Servicfy",
   "description": "Sistema de gestao para servicos recorrentes",
   "start_url": "/dashboard",
   "display": "standalone",

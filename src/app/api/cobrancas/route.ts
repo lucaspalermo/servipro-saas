@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
   // ── Integracao real com MercadoPago ──────────────────────────────
   if (accessToken) {
     const webhookUrl = `${baseUrl}/api/webhooks/mercadopago`;
-    const pagadorEmail = cliente.email || "cliente@servipro.com.br";
+    const pagadorEmail = cliente.email || "cliente@servicfy.com.br";
     const pagadorNome = cliente.nome || "Cliente";
 
     if ((tipo || "pix") === "pix") {

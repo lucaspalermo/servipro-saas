@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   const { searchParams } = new URL(req.url);
   const token = searchParams.get("token");
 
-  if (token !== (process.env.CRON_SECRET || "servipro-cron-secret")) {
+  if (token !== (process.env.CRON_SECRET || "servicfy-cron-secret")) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton() {
   const phoneNumber = "5511999999999";
-  const message = encodeURIComponent("Ola! Tenho interesse no ServiPro");
+  const message = encodeURIComponent("Ola! Tenho interesse no Servicfy");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (

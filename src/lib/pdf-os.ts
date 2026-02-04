@@ -104,7 +104,7 @@ export function generateOSPdf(os: any, tenant: any): void {
   doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(...COLORS.textDark);
-  doc.text(tenant?.nome || "ServiPro", companyX, y + 6);
+  doc.text(tenant?.nome || "Servicfy", companyX, y + 6);
 
   doc.setFontSize(8);
   doc.setFont("helvetica", "normal");
@@ -358,7 +358,7 @@ export function generateOSPdf(os: any, tenant: any): void {
   doc.setFontSize(7);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...COLORS.textLight);
-  doc.text("Documento gerado pelo ServiPro - www.servipro.com.br", margin, footerY);
+  doc.text("Documento gerado pelo Servicfy - www.servicfy.com.br", margin, footerY);
   doc.text(`Gerado em: ${formatDateTimePdf()}`, pageWidth - margin, footerY, { align: "right" });
 
   // Save the file

@@ -2,34 +2,34 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "./components/Analytics";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://servipro.com.br";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://servicfy.com.br";
 
 export const metadata: Metadata = {
   title: {
-    default: "ServiPro | Sistema de Gestão para Serviços Recorrentes",
-    template: "%s | ServiPro",
+    default: "Servicfy | Sistema de Gestão para Serviços Recorrentes",
+    template: "%s | Servicfy",
   },
   description:
     "Software completo para gestão de dedetizadoras, empresas de limpeza e serviços recorrentes. Agenda automática, OS digital, financeiro e WhatsApp integrado. Teste grátis por 14 dias.",
   keywords:
     "sistema dedetizadora, software gestão serviços, controle pragas, agenda recorrente, ordem serviço digital, gestão dedetização, software dedetizadora, sistema ordem de serviço, gestão empresa limpeza, controle serviços recorrentes",
-  authors: [{ name: "ServiPro" }],
-  creator: "ServiPro",
+  authors: [{ name: "Servicfy" }],
+  creator: "Servicfy",
   metadataBase: new URL(baseUrl),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "ServiPro - Gestão Inteligente de Serviços Recorrentes",
+    title: "Servicfy - Gestão Inteligente de Serviços Recorrentes",
     description: "Automatize agendamentos, controle financeiro e equipe em campo. Tudo em um só lugar.",
     type: "website",
     locale: "pt_BR",
     url: baseUrl,
-    siteName: "ServiPro",
+    siteName: "Servicfy",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ServiPro - Gestão Inteligente de Serviços Recorrentes",
+    title: "Servicfy - Gestão Inteligente de Serviços Recorrentes",
     description: "Automatize agendamentos, controle financeiro e equipe em campo.",
   },
   robots: {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "ServiPro",
+  name: "Servicfy",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#10b981" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="ServiPro" />
+        <meta name="apple-mobile-web-app-title" content="Servicfy" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

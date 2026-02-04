@@ -189,7 +189,7 @@ export default function OnboardingPage() {
           </span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-          Bem-vindo ao ServiPro!
+          Bem-vindo ao Servicfy!
         </h1>
         <p className="text-dark-400 max-w-md mx-auto">
           Vamos configurar sua conta em poucos passos para voce comecar a usar o

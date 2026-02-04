@@ -5,7 +5,7 @@ import { CheckCircle, ArrowLeft, Shield, Database, Eye, Cookie, UserCheck, Lock,
 
 /* ============================================================
    POLITICA DE PRIVACIDADE - LGPD Compliant
-   ServiPro - Sistema de Gestao para Prestadores de Servico
+   Servicfy - Sistema de Gestao para Prestadores de Servico
    ============================================================ */
 
 export default function PoliticaPrivacidadePage() {
@@ -21,7 +21,7 @@ export default function PoliticaPrivacidadePage() {
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">ServiPro</span>
+              <span className="text-xl font-bold text-white">Servicfy</span>
             </Link>
             <Link
               href="/"
@@ -47,7 +47,7 @@ export default function PoliticaPrivacidadePage() {
             Politica de Privacidade
           </h1>
           <p className="text-dark-400 text-lg max-w-2xl mx-auto">
-            Sua privacidade e importante para nos. Esta politica descreve como o ServiPro
+            Sua privacidade e importante para nos. Esta politica descreve como o Servicfy
             coleta, usa e protege seus dados pessoais em conformidade com a Lei Geral de
             Protecao de Dados (LGPD - Lei n. 13.709/2018).
           </p>
@@ -68,7 +68,7 @@ export default function PoliticaPrivacidadePage() {
             title="Coleta de Dados Pessoais"
           >
             <p className="text-dark-300 leading-relaxed mb-4">
-              O ServiPro coleta dados pessoais de forma transparente e com base legal adequada,
+              O Servicfy coleta dados pessoais de forma transparente e com base legal adequada,
               conforme previsto na LGPD. Os dados sao coletados nas seguintes situacoes:
             </p>
             <h4 className="text-white font-semibold text-sm mb-3 mt-6">1.1 Dados fornecidos pelo usuario</h4>
@@ -119,7 +119,7 @@ export default function PoliticaPrivacidadePage() {
                 {
                   base: "Execucao de contrato (Art. 7, V)",
                   items: [
-                    "Prestacao dos servicos contratados na plataforma ServiPro",
+                    "Prestacao dos servicos contratados na plataforma Servicfy",
                     "Gerenciamento de conta, assinaturas e cobrancas",
                     "Emissao de notas fiscais e documentos relacionados",
                     "Comunicacao sobre atualizacoes, manutencoes e incidentes",
@@ -173,7 +173,7 @@ export default function PoliticaPrivacidadePage() {
             title="Compartilhamento de Dados"
           >
             <p className="text-dark-300 leading-relaxed mb-4">
-              O ServiPro nao vende, aluga ou comercializa dados pessoais de seus usuarios.
+              O Servicfy nao vende, aluga ou comercializa dados pessoais de seus usuarios.
               O compartilhamento ocorre apenas nas seguintes situacoes:
             </p>
             <div className="space-y-4">
@@ -215,7 +215,7 @@ export default function PoliticaPrivacidadePage() {
             title="Cookies e Tecnologias de Rastreamento"
           >
             <p className="text-dark-300 leading-relaxed mb-4">
-              O ServiPro utiliza cookies e tecnologias similares para melhorar sua experiencia
+              O Servicfy utiliza cookies e tecnologias similares para melhorar sua experiencia
               na plataforma. Abaixo detalhamos os tipos de cookies utilizados:
             </p>
             <div className="overflow-x-auto">
@@ -264,7 +264,7 @@ export default function PoliticaPrivacidadePage() {
               {[
                 {
                   right: "Confirmacao e Acesso",
-                  desc: "Voce pode solicitar a confirmacao da existencia de tratamento e o acesso aos seus dados pessoais armazenados pelo ServiPro.",
+                  desc: "Voce pode solicitar a confirmacao da existencia de tratamento e o acesso aos seus dados pessoais armazenados pelo Servicfy.",
                 },
                 {
                   right: "Correcao",
@@ -305,8 +305,8 @@ export default function PoliticaPrivacidadePage() {
               <p className="text-dark-300 text-sm leading-relaxed">
                 <strong className="text-white">Como exercer seus direitos:</strong> Envie sua
                 solicitacao para{" "}
-                <a href="mailto:privacidade@servipro.com.br" className="text-brand-400 hover:text-brand-300 underline">
-                  privacidade@servipro.com.br
+                <a href="mailto:privacidade@servicfy.com.br" className="text-brand-400 hover:text-brand-300 underline">
+                  privacidade@servicfy.com.br
                 </a>{" "}
                 com o assunto &quot;Exercicio de Direitos LGPD&quot;. Responderemos sua
                 solicitacao em ate 15 (quinze) dias uteis, conforme previsto na legislacao.
@@ -321,7 +321,7 @@ export default function PoliticaPrivacidadePage() {
             title="Seguranca dos Dados"
           >
             <p className="text-dark-300 leading-relaxed mb-4">
-              O ServiPro adota medidas tecnicas e organizacionais para proteger seus
+              O Servicfy adota medidas tecnicas e organizacionais para proteger seus
               dados pessoais contra acesso nao autorizado, destruicao, perda, alteracao
               ou qualquer forma de tratamento inadequado:
             </p>
@@ -419,7 +419,7 @@ export default function PoliticaPrivacidadePage() {
             title="Encarregado de Protecao de Dados (DPO)"
           >
             <p className="text-dark-300 leading-relaxed mb-6">
-              Em conformidade com o Art. 41 da LGPD, o ServiPro nomeou um Encarregado
+              Em conformidade com o Art. 41 da LGPD, o Servicfy nomeou um Encarregado
               de Protecao de Dados (Data Protection Officer - DPO) para atender as
               solicitacoes dos titulares de dados e intermediar a comunicacao com a
               Autoridade Nacional de Protecao de Dados (ANPD).
@@ -432,10 +432,10 @@ export default function PoliticaPrivacidadePage() {
                   <div>
                     <span className="text-dark-500 text-sm">E-mail:</span>
                     <a
-                      href="mailto:privacidade@servipro.com.br"
+                      href="mailto:privacidade@servicfy.com.br"
                       className="text-brand-400 hover:text-brand-300 text-sm ml-2 underline"
                     >
-                      privacidade@servipro.com.br
+                      privacidade@servicfy.com.br
                     </a>
                   </div>
                 </div>
@@ -443,7 +443,7 @@ export default function PoliticaPrivacidadePage() {
                   <Shield className="w-5 h-5 text-brand-500" />
                   <div>
                     <span className="text-dark-500 text-sm">Empresa:</span>
-                    <span className="text-dark-300 text-sm ml-2">ServiPro Tecnologia Ltda.</span>
+                    <span className="text-dark-300 text-sm ml-2">Servicfy Tecnologia Ltda.</span>
                   </div>
                 </div>
               </div>
@@ -462,7 +462,7 @@ export default function PoliticaPrivacidadePage() {
               9. Alteracoes nesta Politica
             </h3>
             <p className="text-dark-400 text-sm leading-relaxed mb-3">
-              O ServiPro reserva-se o direito de modificar esta Politica de Privacidade
+              O Servicfy reserva-se o direito de modificar esta Politica de Privacidade
               a qualquer momento. As alteracoes serao publicadas nesta pagina com a data
               de atualizacao revisada.
             </p>
@@ -513,7 +513,7 @@ export default function PoliticaPrivacidadePage() {
               <div className="w-7 h-7 rounded-md bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
                 <CheckCircle className="w-3.5 h-3.5 text-white" />
               </div>
-              <span className="text-sm font-bold text-white">ServiPro</span>
+              <span className="text-sm font-bold text-white">Servicfy</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-dark-500">
               <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
@@ -521,7 +521,7 @@ export default function PoliticaPrivacidadePage() {
               <Link href="/login" className="hover:text-white transition-colors">Entrar</Link>
             </div>
             <p className="text-dark-600 text-xs">
-              &copy; {new Date().getFullYear()} ServiPro. Todos os direitos reservados.
+              &copy; {new Date().getFullYear()} Servicfy. Todos os direitos reservados.
             </p>
           </div>
         </div>

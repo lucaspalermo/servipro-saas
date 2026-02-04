@@ -59,7 +59,7 @@ O investimento para montar uma dedetizadora varia de **R$ 5.000 a R$ 30.000**, d
 
 ## Dica profissional: use um sistema de gestao
 
-O maior erro de dedetizadoras iniciantes e gerenciar tudo em planilhas. Um sistema como o **ServiPro** automatiza agendamentos recorrentes, gera OS digitais e envia lembretes por WhatsApp — o que reduz cancelamentos e aumenta a profissionalidade do seu negocio.
+O maior erro de dedetizadoras iniciantes e gerenciar tudo em planilhas. Um sistema como o **Servicfy** automatiza agendamentos recorrentes, gera OS digitais e envia lembretes por WhatsApp — o que reduz cancelamentos e aumenta a profissionalidade do seu negocio.
     `,
   },
   "quanto-cobra-um-dedetizador": {
@@ -102,7 +102,7 @@ Os precos variam de acordo com o tipo de servico, area do imovel e regiao do pai
 
 ## Controle financeiro e fundamental
 
-Com um sistema como o **ServiPro**, voce sabe exatamente quanto gasta por servico e qual sua margem real de lucro. O modulo financeiro calcula automaticamente receitas, despesas e comissoes de tecnicos.
+Com um sistema como o **Servicfy**, voce sabe exatamente quanto gasta por servico e qual sua margem real de lucro. O modulo financeiro calcula automaticamente receitas, despesas e comissoes de tecnicos.
     `,
   },
   "sistema-gestao-servicos-recorrentes": {
@@ -179,7 +179,7 @@ Envie lembretes por WhatsApp 1 dia antes do servico. Isso reduz no-shows em ate 
 
 ### 5. Use um sistema com recorrencia automatica
 
-O maior erro e depender da memoria humana. Um sistema como o **ServiPro** agenda automaticamente o proximo servico baseado na recorrencia do contrato.
+O maior erro e depender da memoria humana. Um sistema como o **Servicfy** agenda automaticamente o proximo servico baseado na recorrencia do contrato.
 
 ## Metricas para acompanhar
 
@@ -232,11 +232,11 @@ Com um clique, consulte todo o historico de servicos de um cliente. Isso e valio
 O cliente assina no celular do tecnico. Prova de que o servico foi realizado, sem papel.
 
 ### Geracao automatica de PDF
-Gere o PDF da OS com um clique e envie por WhatsApp ou email. O **ServiPro** gera PDFs profissionais com logo da empresa, dados do servico e assinatura.
+Gere o PDF da OS com um clique e envie por WhatsApp ou email. O **Servicfy** gera PDFs profissionais com logo da empresa, dados do servico e assinatura.
 
 ## Como implementar
 
-1. Escolha um sistema que gere OS digitais (como o ServiPro)
+1. Escolha um sistema que gere OS digitais (como o Servicfy)
 2. Cadastre seus servicos com checklist padrao
 3. Treine seus tecnicos no uso do sistema (celular)
 4. Envie a OS em PDF para o cliente apos o servico
@@ -321,8 +321,8 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    author: { "@type": "Organization", name: "ServiPro" },
-    publisher: { "@type": "Organization", name: "ServiPro" },
+    author: { "@type": "Organization", name: "Servicfy" },
+    publisher: { "@type": "Organization", name: "Servicfy" },
   };
 
   return (
@@ -340,7 +340,7 @@ export default async function BlogPostPage({
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">ServiPro</span>
+              <span className="text-xl font-bold text-white">Servicfy</span>
             </Link>
             <div className="flex items-center gap-6">
               <Link href="/" className="text-dark-400 hover:text-white transition-colors text-sm">Home</Link>
@@ -392,7 +392,7 @@ export default async function BlogPostPage({
               Automatize a gestao do seu negocio
             </h3>
             <p className="text-dark-400 text-sm mb-6">
-              Teste o ServiPro gratis por 14 dias. Sem cartao de credito.
+              Teste o Servicfy gratis por 14 dias. Sem cartao de credito.
             </p>
             <Link href="/registro" className="btn-primary !px-8 !py-3">
               Comecar Gratis <ArrowRight className="w-4 h-4" />
@@ -404,7 +404,7 @@ export default async function BlogPostPage({
       {/* Footer */}
       <footer className="border-t border-dark-800 py-8">
         <div className="max-w-4xl mx-auto px-4 text-center text-dark-500 text-sm">
-          &copy; {new Date().getFullYear()} ServiPro. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} Servicfy. Todos os direitos reservados.
         </div>
       </footer>
     </div>

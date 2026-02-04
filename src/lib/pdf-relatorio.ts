@@ -96,7 +96,7 @@ export function generateRelatorioPdf(
   doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(...COLORS.textDark);
-  doc.text(data.tenantNome || "ServiPro", companyX, y + 6);
+  doc.text(data.tenantNome || "Servicfy", companyX, y + 6);
 
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
@@ -266,7 +266,7 @@ export function generateRelatorioPdf(
   doc.setFontSize(7);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(...COLORS.textLight);
-  doc.text("Documento gerado pelo ServiPro - www.servipro.com.br", margin, footerY);
+  doc.text("Documento gerado pelo Servicfy - www.servicfy.com.br", margin, footerY);
   doc.text(`Gerado em: ${formatDateTimePdf()}`, pageWidth - margin, footerY, { align: "right" });
 
   // Save

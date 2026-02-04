@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { prisma } from "@/lib/prisma";
 
-const JWT_SECRET = process.env.NEXTAUTH_SECRET || "servipro-secret";
+const JWT_SECRET = process.env.NEXTAUTH_SECRET || "servicfy-secret";
 
 function verifyTecnicoToken(req: NextRequest): { tecnicoId: string; tenantId: string } | null {
   const auth = req.headers.get("authorization");

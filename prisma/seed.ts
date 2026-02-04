@@ -25,7 +25,7 @@ async function main() {
     data: {
       tenantId: tenant.id,
       nome: "Administrador",
-      email: "admin@servipro.com",
+      email: "admin@servicfy.com",
       senha: senhaHash,
       role: "admin",
     },
@@ -120,7 +120,7 @@ async function main() {
   ]);
 
   console.log("Seed completed!");
-  console.log("Login: admin@servipro.com / admin123");
+  console.log("Login: admin@servicfy.com / admin123");
 }
 
 main()

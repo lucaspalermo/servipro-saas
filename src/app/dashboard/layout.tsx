@@ -99,7 +99,7 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
           </div>
           {!collapsed && (
             <span className="text-xl font-bold text-white whitespace-nowrap">
-              ServiPro
+              Servicfy
             </span>
           )}
           {/* Close on mobile */}

@@ -75,7 +75,7 @@ export default function ObrigadoPage() {
             <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-shadow">
               <CheckCircle className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold text-white">ServiPro</span>
+            <span className="text-2xl font-bold text-white">Servicfy</span>
           </Link>
         </div>
 
@@ -99,7 +99,7 @@ export default function ObrigadoPage() {
               Conta criada com sucesso!
             </h1>
             <p className="text-dark-400 text-sm">
-              Bem-vindo ao ServiPro! Sua conta foi criada e esta pronta para uso.
+              Bem-vindo ao Servicfy! Sua conta foi criada e esta pronta para uso.
             </p>
           </div>
 
@@ -154,7 +154,7 @@ export default function ObrigadoPage() {
         {/* Footer */}
         <div className="text-center mt-8">
           <p className="text-dark-600 text-xs">
-            &copy; {new Date().getFullYear()} ServiPro. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Servicfy. Todos os direitos reservados.
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description: "Dicas, guias e novidades para prestadores de servicos recorrentes. Dedetizadoras, limpeza, manutencao e muito mais.",
   openGraph: {
-    title: "Blog | ServiPro",
+    title: "Blog | Servicfy",
     description: "Dicas e guias para prestadores de servicos recorrentes.",
     type: "website",
   },

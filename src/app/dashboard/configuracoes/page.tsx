@@ -405,7 +405,7 @@ export default function ConfiguracoesPage() {
 
   const shareReferral = () => {
     const link = `${window.location.origin}/registro?ref=${codigoIndicacao}`;
-    const text = `Experimente o ServiPro! Use meu codigo de indicacao e ganhe beneficios: ${link}`;
+    const text = `Experimente o Servicfy! Use meu codigo de indicacao e ganhe beneficios: ${link}`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, "_blank");
   };

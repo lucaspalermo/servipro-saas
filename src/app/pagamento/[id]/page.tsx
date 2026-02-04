@@ -367,7 +367,7 @@ export default function PagamentoPage() {
 
         {/* Powered by */}
         <p className="text-center text-gray-600 text-[10px] mt-4">
-          Pagamento processado por ServiPro
+          Pagamento processado por Servicfy
         </p>
       </div>
     </div>

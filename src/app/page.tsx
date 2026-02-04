@@ -56,7 +56,7 @@ function Navbar() {
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
               <CheckCircle className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">ServiPro</span>
+            <span className="text-xl font-bold text-white">Servicfy</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-dark-400 hover:text-white transition-colors text-sm">Recursos</a>
@@ -173,7 +173,7 @@ function Hero() {
                 Seu navegador nao suporta video.
               </video>
             </div>
-            <p className="text-center text-dark-500 text-xs mt-3">Veja como o ServiPro transforma a gestao da sua empresa em 33 segundos</p>
+            <p className="text-center text-dark-500 text-xs mt-3">Veja como o Servicfy transforma a gestao da sua empresa em 33 segundos</p>
           </div>
         </div>
 
@@ -185,7 +185,7 @@ function Hero() {
                 <div className="w-3 h-3 rounded-full bg-red-500" />
                 <div className="w-3 h-3 rounded-full bg-amber-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-xs text-dark-500">app.servipro.com.br/dashboard</span>
+                <span className="ml-2 text-xs text-dark-500">app.servicfy.com.br/dashboard</span>
               </div>
               <div className="p-6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
@@ -247,7 +247,7 @@ function CustomerLogos() {
     <section className="py-12 border-t border-dark-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-dark-500 text-sm mb-8 uppercase tracking-wider font-medium">
-          Empresas que confiam no ServiPro
+          Empresas que confiam no Servicfy
         </p>
         <div className="flex items-center justify-center flex-wrap gap-6 sm:gap-10">
           {logos.map((logo, i) => (
@@ -277,7 +277,7 @@ function Problems() {
           <span className="text-red-400">desorganizacao</span>?
         </h2>
         <p className="text-dark-400 text-center max-w-2xl mx-auto mb-12">
-          Se voce enfrenta esses problemas, o ServiPro foi feito para voce.
+          Se voce enfrenta esses problemas, o Servicfy foi feito para voce.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -381,18 +381,18 @@ function Features() {
 /* ------ COMPARISON TABLE ------ */
 function ComparisonTable() {
   const features = [
-    { name: "Agenda recorrente automatica", servipro: true, planilha: false, papel: false, concorrente: true },
-    { name: "OS digital com checklist e foto", servipro: true, planilha: false, papel: false, concorrente: true },
-    { name: "WhatsApp integrado (lembretes)", servipro: true, planilha: false, papel: false, concorrente: false },
-    { name: "Cobranca PIX/Boleto integrada", servipro: true, planilha: false, papel: false, concorrente: false },
-    { name: "Portal do cliente (link publico)", servipro: true, planilha: false, papel: false, concorrente: false },
-    { name: "App para tecnico em campo", servipro: true, planilha: false, papel: false, concorrente: true },
-    { name: "Controle financeiro completo", servipro: true, planilha: "partial", papel: false, concorrente: true },
-    { name: "Comissoes automaticas", servipro: true, planilha: false, papel: false, concorrente: false },
-    { name: "Relatorios em PDF", servipro: true, planilha: "partial", papel: false, concorrente: true },
-    { name: "Preco acessivel para MEI", servipro: true, planilha: true, papel: true, concorrente: false },
-    { name: "Setup em menos de 5 minutos", servipro: true, planilha: false, papel: true, concorrente: false },
-    { name: "Sem risco de perder dados", servipro: true, planilha: "partial", papel: false, concorrente: true },
+    { name: "Agenda recorrente automatica", servicfy: true, planilha: false, papel: false, concorrente: true },
+    { name: "OS digital com checklist e foto", servicfy: true, planilha: false, papel: false, concorrente: true },
+    { name: "WhatsApp integrado (lembretes)", servicfy: true, planilha: false, papel: false, concorrente: false },
+    { name: "Cobranca PIX/Boleto integrada", servicfy: true, planilha: false, papel: false, concorrente: false },
+    { name: "Portal do cliente (link publico)", servicfy: true, planilha: false, papel: false, concorrente: false },
+    { name: "App para tecnico em campo", servicfy: true, planilha: false, papel: false, concorrente: true },
+    { name: "Controle financeiro completo", servicfy: true, planilha: "partial", papel: false, concorrente: true },
+    { name: "Comissoes automaticas", servicfy: true, planilha: false, papel: false, concorrente: false },
+    { name: "Relatorios em PDF", servicfy: true, planilha: "partial", papel: false, concorrente: true },
+    { name: "Preco acessivel para MEI", servicfy: true, planilha: true, papel: true, concorrente: false },
+    { name: "Setup em menos de 5 minutos", servicfy: true, planilha: false, papel: true, concorrente: false },
+    { name: "Sem risco de perder dados", servicfy: true, planilha: "partial", papel: false, concorrente: true },
   ];
 
   const renderIcon = (val: boolean | string) => {
@@ -408,7 +408,7 @@ function ComparisonTable() {
           <span className="text-brand-400 text-sm font-semibold uppercase tracking-wider">Comparacao</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-3">
             Por que escolher o{" "}
-            <span className="gradient-text">ServiPro</span>?
+            <span className="gradient-text">Servicfy</span>?
           </h2>
           <p className="text-dark-400 mt-4">
             Veja como nos comparamos com as alternativas que voce usa hoje.
@@ -426,7 +426,7 @@ function ComparisonTable() {
                       <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center mb-1">
                         <CheckCircle className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-brand-400 font-bold text-xs">ServiPro</span>
+                      <span className="text-brand-400 font-bold text-xs">Servicfy</span>
                     </div>
                   </th>
                   <th className="text-center p-4 w-28">
@@ -455,7 +455,7 @@ function ComparisonTable() {
                 {features.map((f, i) => (
                   <tr key={i} className="border-b border-dark-800 hover:bg-dark-800/30 transition-colors">
                     <td className="p-4 text-dark-300">{f.name}</td>
-                    <td className="p-4 text-center"><div className="flex justify-center">{renderIcon(f.servipro)}</div></td>
+                    <td className="p-4 text-center"><div className="flex justify-center">{renderIcon(f.servicfy)}</div></td>
                     <td className="p-4 text-center"><div className="flex justify-center">{renderIcon(f.planilha)}</div></td>
                     <td className="p-4 text-center hidden sm:table-cell"><div className="flex justify-center">{renderIcon(f.papel)}</div></td>
                     <td className="p-4 text-center hidden md:table-cell"><div className="flex justify-center">{renderIcon(f.concorrente)}</div></td>
@@ -476,7 +476,7 @@ function ComparisonTable() {
 
         <div className="text-center mt-8">
           <Link href="/registro" className="btn-primary">
-            Testar ServiPro Gratis <ArrowRight className="w-4 h-4" />
+            Testar Servicfy Gratis <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
@@ -657,7 +657,7 @@ function Guarantee() {
           </div>
           <h3 className="text-2xl font-bold text-white mb-3">Garantia de 30 dias</h3>
           <p className="text-dark-400 text-sm max-w-lg mx-auto mb-6">
-            Se em ate 30 dias voce nao ficar satisfeito com o ServiPro, devolvemos 100% do valor pago.
+            Se em ate 30 dias voce nao ficar satisfeito com o Servicfy, devolvemos 100% do valor pago.
             Sem perguntas, sem burocracia. Seu unico risco e nao experimentar.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
@@ -737,7 +737,7 @@ function Testimonials() {
       name: "Lucia Ferreira",
       role: "Gerente - CleanHouse",
       city: "Brasilia, DF",
-      text: "Testei 3 sistemas antes do ServiPro. Os outros eram caros e complicados. Esse e simples, barato e faz tudo que preciso. Minha equipe adotou em 1 dia.",
+      text: "Testei 3 sistemas antes do Servicfy. Os outros eram caros e complicados. Esse e simples, barato e faz tudo que preciso. Minha equipe adotou em 1 dia.",
       rating: 5,
       metric: "Setup em 1 dia",
       avatar: "LF",
@@ -755,7 +755,7 @@ function Testimonials() {
             <span className="gradient-text">transformaram</span>{" "}
             sua gestao
           </h2>
-          <p className="text-dark-400 mt-4">Mais de 500 empresas confiam no ServiPro</p>
+          <p className="text-dark-400 mt-4">Mais de 500 empresas confiam no Servicfy</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -806,7 +806,7 @@ function FAQ() {
         </div>
         <div className="space-y-4">
           {[
-            { q: "Preciso instalar algum programa?", a: "Nao! O ServiPro funciona 100% no navegador e no celular. Basta acessar e usar. Tambem funciona offline como app (PWA)." },
+            { q: "Preciso instalar algum programa?", a: "Nao! O Servicfy funciona 100% no navegador e no celular. Basta acessar e usar. Tambem funciona offline como app (PWA)." },
             { q: "Funciona para qual segmento?", a: "Dedetizadoras, empresas de limpeza, manutencao de ar-condicionado, jardinagem, eletricistas, encanadores, e qualquer servico recorrente ou sob demanda." },
             { q: "Posso cancelar a qualquer momento?", a: "Sim, sem fidelidade. Cancele quando quiser, sem multa ou burocracia. Alem disso, oferecemos garantia de 30 dias com reembolso total." },
             { q: "Meus dados estao seguros?", a: "Sim! Usamos criptografia de ponta a ponta e servidores no Brasil com backup diario. Estamos em conformidade com a LGPD (Lei Geral de Protecao de Dados)." },
@@ -910,7 +910,7 @@ function FinalCTA() {
               Pronto para escalar seu negocio?
             </h2>
             <p className="text-dark-400 text-lg max-w-xl mx-auto mb-8">
-              Junte-se a mais de 500 empresas que ja automatizaram sua gestao com o ServiPro.
+              Junte-se a mais de 500 empresas que ja automatizaram sua gestao com o Servicfy.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/registro" className="btn-primary text-base !px-8 !py-4">
@@ -938,7 +938,7 @@ function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center">
                 <CheckCircle className="w-4 h-4 text-white" />
               </div>
-              <span className="text-lg font-bold text-white">ServiPro</span>
+              <span className="text-lg font-bold text-white">Servicfy</span>
             </div>
             <p className="text-dark-500 text-sm mb-4">
               Sistema de gestao para prestadores de servico recorrente.
@@ -975,14 +975,14 @@ function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Contato</h4>
             <ul className="space-y-2 text-sm text-dark-400">
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> contato@servipro.com.br</li>
+              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> contato@servicfy.com.br</li>
               <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> (11) 99999-0000</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-dark-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-dark-500 text-sm">
-            &copy; {new Date().getFullYear()} ServiPro. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Servicfy. Todos os direitos reservados.
           </div>
           <div className="flex items-center gap-4 text-dark-600 text-xs">
             <span>Servidores no Brasil</span>

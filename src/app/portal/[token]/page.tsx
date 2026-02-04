@@ -298,7 +298,7 @@ export default function PortalPage() {
       <footer className="border-t border-dark-800 py-6 mt-12">
         <div className="max-w-4xl mx-auto px-4 text-center text-dark-500 text-xs">
           <p>Portal do Cliente - {data.empresa.nome}</p>
-          <p className="mt-1">Powered by ServiPro</p>
+          <p className="mt-1">Powered by Servicfy</p>
         </div>
       </footer>
     </div>
