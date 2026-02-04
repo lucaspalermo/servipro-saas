@@ -1,0 +1,402 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Tenant {
+  id               String   @id @default(cuid())
+  nome             String
+  cnpj             String?
+  email            String?
+  telefone         String?
+  endereco         String?
+  segmento         String   @default("dedetizadora")
+  plano            String   @default("trial")
+  planoPeriodo     String   @default("mensal")
+  codigoIndicacao  String?  @unique @default(cuid())
+  indicadoPorId    String?
+  ativo            Boolean  @default(true)
+  trialEnd         DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  users               User[]
+  clientes            Cliente[]
+  servicos            Servico[]
+  tecnicos            Tecnico[]
+  contratos           Contrato[]
+  agendamentos        Agendamento[]
+  ordens              OrdemServico[]
+  financeiro          Financeiro[]
+  configuracoes       Configuracao[]
+  mensagemTemplates   MensagemTemplate[]
+  mensagemLogs        MensagemLog[]
+  automacaoConfigs    AutomacaoConfig[]
+  indicacoes          Indicacao[]
+  cobrancas           Cobranca[]
+  produtos            Produto[]
+  movimentacoesEstoque MovimentacaoEstoque[]
+  filiais             Filial[]
+}
+
+model User {
+  id                 String   @id @default(cuid())
+  tenantId           String
+  nome               String
+  email              String   @unique
+  senha              String
+  role               String   @default("admin")
+  ativo              Boolean  @default(true)
+  onboardingCompleto Boolean  @default(false)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+}
+
+model Cliente {
+  id          String   @id @default(cuid())
+  tenantId    String
+  filialId    String?
+  tipoPessoa  String   @default("PF")
+  nome        String
+  razaoSocial String?
+  cpfCnpj     String?
+  email       String?
+  telefone    String?
+  whatsapp    String?
+  cep         String?
+  endereco    String?
+  numero      String?
+  complemento String?
+  bairro      String?
+  cidade      String?
+  estado      String?
+  tipoImovel  String   @default("residencial")
+  areaM2      Float?
+  observacoes String?
+  status      String   @default("ativo")
+  portalToken String?  @unique @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  tenant         Tenant         @relation(fields: [tenantId], references: [id])
+  filial         Filial?        @relation(fields: [filialId], references: [id])
+  contratos      Contrato[]
+  agendamentos   Agendamento[]
+  ordens         OrdemServico[]
+  financeiro     Financeiro[]
+  mensagemLogs   MensagemLog[]
+  cobrancas      Cobranca[]
+}
+
+model Servico {
+  id             String   @id @default(cuid())
+  tenantId       String
+  nome           String
+  descricao      String?
+  precoBase      Float    @default(0)
+  duracaoMin     Int      @default(60)
+  recorrenciaDias Int     @default(30)
+  ativo          Boolean  @default(true)
+  createdAt      DateTime @default(now())
+
+  tenant       Tenant         @relation(fields: [tenantId], references: [id])
+  contratos    Contrato[]
+  agendamentos Agendamento[]
+  ordens       OrdemServico[]
+  checklist    ChecklistItem[]
+}
+
+model ChecklistItem {
+  id          String  @id @default(cuid())
+  servicoId   String
+  descricao   String
+  obrigatorio Boolean @default(false)
+  ordem       Int     @default(0)
+
+  servico Servico @relation(fields: [servicoId], references: [id])
+}
+
+model Tecnico {
+  id             String   @id @default(cuid())
+  tenantId       String
+  filialId       String?
+  nome           String
+  telefone       String?
+  email          String?
+  cpf            String?
+  regiao         String?
+  especialidades String?
+  comissao       Float    @default(10)
+  ativo          Boolean  @default(true)
+  senha          String?
+  loginAtivo     Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  tenant       Tenant         @relation(fields: [tenantId], references: [id])
+  filial       Filial?        @relation(fields: [filialId], references: [id])
+  agendamentos Agendamento[]
+  ordens       OrdemServico[]
+  financeiro   Financeiro[]
+}
+
+model Contrato {
+  id              String   @id @default(cuid())
+  tenantId        String
+  clienteId       String
+  servicoId       String?
+  descricao       String?
+  valorMensal     Float    @default(0)
+  recorrenciaDias Int      @default(30)
+  dataInicio      DateTime
+  dataFim         DateTime?
+  proximoServico  DateTime?
+  status          String   @default("ativo")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  tenant  Tenant   @relation(fields: [tenantId], references: [id])
+  cliente Cliente  @relation(fields: [clienteId], references: [id])
+  servico Servico? @relation(fields: [servicoId], references: [id])
+  ordens  OrdemServico[]
+}
+
+model Agendamento {
+  id           String   @id @default(cuid())
+  tenantId     String
+  clienteId    String
+  servicoId    String?
+  tecnicoId    String?
+  dataAgendada DateTime
+  horaInicio   String?
+  horaFim      String?
+  status       String   @default("agendado")
+  observacoes  String?
+  recorrente   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  tenant  Tenant   @relation(fields: [tenantId], references: [id])
+  cliente Cliente  @relation(fields: [clienteId], references: [id])
+  servico Servico? @relation(fields: [servicoId], references: [id])
+  tecnico Tecnico? @relation(fields: [tecnicoId], references: [id])
+  ordens  OrdemServico[]
+}
+
+model OrdemServico {
+  id              String   @id @default(cuid())
+  tenantId        String
+  filialId        String?
+  numero          String
+  agendamentoId   String?
+  clienteId       String
+  tecnicoId       String?
+  servicoId       String?
+  contratoId      String?
+  dataExecucao    DateTime?
+  horaInicio      String?
+  horaFim         String?
+  status          String   @default("aberta")
+  valor           Float    @default(0)
+  descricao       String?
+  obsTecnico      String?
+  assinatura      String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  tenant      Tenant       @relation(fields: [tenantId], references: [id])
+  filial      Filial?      @relation(fields: [filialId], references: [id])
+  cliente     Cliente      @relation(fields: [clienteId], references: [id])
+  tecnico     Tecnico?     @relation(fields: [tecnicoId], references: [id])
+  servico     Servico?     @relation(fields: [servicoId], references: [id])
+  contrato    Contrato?    @relation(fields: [contratoId], references: [id])
+  agendamento Agendamento? @relation(fields: [agendamentoId], references: [id])
+  financeiro  Financeiro[]
+  cobrancas   Cobranca[]
+  produtosUsados ProdutoOrdem[]
+}
+
+model Financeiro {
+  id             String    @id @default(cuid())
+  tenantId       String
+  tipo           String
+  categoria      String?
+  descricao      String?
+  valor          Float
+  dataVencimento DateTime?
+  dataPagamento  DateTime?
+  status         String    @default("pendente")
+  osId           String?
+  clienteId      String?
+  tecnicoId      String?
+  formaPagamento String?
+  createdAt      DateTime  @default(now())
+
+  tenant  Tenant        @relation(fields: [tenantId], references: [id])
+  os      OrdemServico? @relation(fields: [osId], references: [id])
+  cliente Cliente?      @relation(fields: [clienteId], references: [id])
+  tecnico Tecnico?      @relation(fields: [tecnicoId], references: [id])
+}
+
+model Configuracao {
+  id       String @id @default(cuid())
+  tenantId String
+  chave    String
+  valor    String?
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, chave])
+}
+
+model MensagemTemplate {
+  id        String   @id @default(cuid())
+  tenantId  String
+  nome      String
+  texto     String
+  tipo      String   @default("custom")
+  ativo     Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tenant       Tenant         @relation(fields: [tenantId], references: [id])
+  mensagemLogs MensagemLog[]
+}
+
+model MensagemLog {
+  id         String   @id @default(cuid())
+  tenantId   String
+  templateId String?
+  clienteId  String
+  telefone   String
+  mensagem   String
+  tipo       String
+  status     String   @default("enviado")
+  createdAt  DateTime @default(now())
+
+  tenant   Tenant            @relation(fields: [tenantId], references: [id])
+  template MensagemTemplate? @relation(fields: [templateId], references: [id])
+  cliente  Cliente           @relation(fields: [clienteId], references: [id])
+}
+
+model AutomacaoConfig {
+  id        String   @id @default(cuid())
+  tenantId  String
+  tipo      String
+  ativo     Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+
+  @@unique([tenantId, tipo])
+}
+
+// ========== PRIORIDADE 3 ==========
+
+// #13 - Programa de Indicacao
+model Indicacao {
+  id              String   @id @default(cuid())
+  tenantId        String
+  indicadoEmail   String
+  indicadoNome    String?
+  indicadoTenantId String?
+  status          String   @default("pendente")
+  recompensa      String?
+  createdAt       DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id])
+}
+
+// #16 - Cobrancas (PIX/Boleto)
+model Cobranca {
+  id             String    @id @default(cuid())
+  tenantId       String
+  clienteId      String
+  osId           String?
+  descricao      String
+  valor          Float
+  tipo           String    @default("pix")
+  status         String    @default("pendente")
+  chavePix       String?
+  codigoBoleto   String?
+  linkPagamento  String?
+  qrCode         String?
+  dataVencimento DateTime?
+  dataPagamento  DateTime?
+  externalId     String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  tenant  Tenant        @relation(fields: [tenantId], references: [id])
+  cliente Cliente       @relation(fields: [clienteId], references: [id])
+  os      OrdemServico? @relation(fields: [osId], references: [id])
+}
+
+// #17 - Controle de Estoque
+model Produto {
+  id             String   @id @default(cuid())
+  tenantId       String
+  nome           String
+  descricao      String?
+  unidade        String   @default("un")
+  precoCompra    Float    @default(0)
+  precoVenda     Float    @default(0)
+  estoqueAtual   Float    @default(0)
+  estoqueMinimo  Float    @default(0)
+  ativo          Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  tenant         Tenant                @relation(fields: [tenantId], references: [id])
+  movimentacoes  MovimentacaoEstoque[]
+  ordensServico  ProdutoOrdem[]
+}
+
+model MovimentacaoEstoque {
+  id         String   @id @default(cuid())
+  tenantId   String
+  produtoId  String
+  tipo       String
+  quantidade Float
+  observacao String?
+  createdAt  DateTime @default(now())
+
+  tenant  Tenant  @relation(fields: [tenantId], references: [id])
+  produto Produto @relation(fields: [produtoId], references: [id])
+}
+
+model ProdutoOrdem {
+  id         String @id @default(cuid())
+  produtoId  String
+  osId       String
+  quantidade Float  @default(1)
+
+  produto Produto      @relation(fields: [produtoId], references: [id])
+  os      OrdemServico @relation(fields: [osId], references: [id])
+}
+
+// #18 - Multi-unidade (Filiais)
+model Filial {
+  id        String   @id @default(cuid())
+  tenantId  String
+  nome      String
+  endereco  String?
+  telefone  String?
+  email     String?
+  responsavel String?
+  ativo     Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tenant   Tenant         @relation(fields: [tenantId], references: [id])
+  clientes Cliente[]
+  tecnicos Tecnico[]
+  ordens   OrdemServico[]
+}
