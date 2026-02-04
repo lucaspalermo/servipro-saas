@@ -120,7 +120,7 @@ function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            <Link href="/registro" className="btn-primary text-base !px-8 !py-4">
+            <Link href="/registro" className="btn-primary btn-cta-pulse text-base !px-8 !py-4">
               Comecar Gratis Agora <ArrowRight className="w-5 h-5" />
             </Link>
             <a href="#video-demo" className="btn-secondary text-base">
