@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const GTM_ID = "GTM-XXXXXXX";
+const GTM_ID = "GTM-T4GPDCGR";
 const META_PIXEL_ID = "XXXXXXXXXX";
 
 export default function Analytics() {
