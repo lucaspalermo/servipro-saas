@@ -967,7 +967,7 @@ function Footer() {
             <h4 className="text-white font-semibold mb-4 text-sm">Legal</h4>
             <ul className="space-y-2 text-sm text-dark-400">
               <li><Link href="/politica-privacidade" className="hover:text-white transition-colors">Politica de Privacidade</Link></li>
-              <li><Link href="/politica-privacidade" className="hover:text-white transition-colors">Termos de Uso</Link></li>
+              <li><Link href="/termos" className="hover:text-white transition-colors">Termos de Uso</Link></li>
               <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Central de Ajuda</a></li>
             </ul>

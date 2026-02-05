@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "./components/Analytics";
+import CookieBanner from "./components/CookieBanner";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://servicfy.com.br";
 
@@ -75,6 +77,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" className="scroll-smooth">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/icons/logo.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/icons/icon-192.jpg" />
         <meta name="theme-color" content="#10b981" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -98,6 +102,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Analytics />
         {children}
+        <WhatsAppButton />
+        <CookieBanner />
       </body>
     </html>
   );
