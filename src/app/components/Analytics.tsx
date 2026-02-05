@@ -1,6 +1,7 @@
 import Script from "next/script";
 
 const GTM_ID = "GTM-T4GPDCGR";
+const GOOGLE_ADS_ID = "AW-17932015734";
 const META_PIXEL_ID = "XXXXXXXXXX";
 
 export default function Analytics() {
@@ -30,6 +31,25 @@ export default function Analytics() {
           style={{ display: "none", visibility: "hidden" }}
         />
       </noscript>
+
+      {/* Google Ads (gtag.js) */}
+      <Script
+        id="google-ads"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+      />
+      <Script
+        id="google-ads-config"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ADS_ID}');
+          `,
+        }}
+      />
 
       {/* Meta Pixel */}
       <Script
