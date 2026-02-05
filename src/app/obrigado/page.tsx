@@ -14,6 +14,13 @@ import {
 } from "lucide-react";
 import { trackConversion } from "../components/ConversionTracker";
 
+// Extend Window for gtag
+declare global {
+  interface Window {
+    gtag?: (command: string, action: string, params: Record<string, string>) => void;
+  }
+}
+
 export default function ObrigadoPage() {
   const router = useRouter();
   const [countdown, setCountdown] = useState(10);
@@ -22,6 +29,13 @@ export default function ObrigadoPage() {
   useEffect(() => {
     trackConversion("Lead");
     trackConversion("CompleteRegistration");
+
+    // Google Ads Conversion
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17932015734/RYAaCKqF9PIbEPaw0-ZC",
+      });
+    }
   }, []);
 
   // Countdown and auto-redirect
