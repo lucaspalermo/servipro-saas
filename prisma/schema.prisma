@@ -8,21 +8,23 @@ datasource db {
 }
 
 model Tenant {
-  id               String   @id @default(cuid())
-  nome             String
-  cnpj             String?
-  email            String?
-  telefone         String?
-  endereco         String?
-  segmento         String   @default("dedetizadora")
-  plano            String   @default("trial")
-  planoPeriodo     String   @default("mensal")
-  codigoIndicacao  String?  @unique @default(cuid())
-  indicadoPorId    String?
-  ativo            Boolean  @default(true)
-  trialEnd         DateTime?
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  id                   String   @id @default(cuid())
+  nome                 String
+  cnpj                 String?
+  email                String?
+  telefone             String?
+  endereco             String?
+  segmento             String   @default("dedetizadora")
+  plano                String   @default("trial")
+  planoPeriodo         String   @default("mensal")
+  codigoIndicacao      String?  @unique @default(cuid())
+  indicadoPorId        String?
+  ativo                Boolean  @default(true)
+  trialEnd             DateTime?
+  asaasCustomerId      String?
+  asaasSubscriptionId  String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
 
   users               User[]
   clientes            Cliente[]
