@@ -15,13 +15,14 @@ import {
  */
 export async function GET() {
   const session = await getServerSession(authOptions);
-  if (!session?.user?.tenantId) {
+  const user = session?.user as { tenantId?: string } | undefined;
+  if (!user?.tenantId) {
     return NextResponse.json({ error: "Não autorizado" }, { status: 401 });
   }
 
   try {
     const tenant = await prisma.tenant.findUnique({
-      where: { id: session.user.tenantId },
+      where: { id: user.tenantId },
       select: {
         id: true,
         nome: true,
@@ -62,7 +63,8 @@ export async function GET() {
  */
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
-  if (!session?.user?.tenantId) {
+  const user = session?.user as { tenantId?: string } | undefined;
+  if (!user?.tenantId) {
     return NextResponse.json({ error: "Não autorizado" }, { status: 401 });
   }
 
@@ -87,7 +89,7 @@ export async function POST(req: Request) {
 
     // Busca tenant
     const tenant = await prisma.tenant.findUnique({
-      where: { id: session.user.tenantId },
+      where: { id: user.tenantId },
       include: {
         users: {
           where: { role: "admin" },
